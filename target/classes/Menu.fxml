@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: linear-gradient(to right bottom , #e53935,#ea4844 50%);" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.sa.managerthpost.controllers.THPostAppController">
+   <children>
+      <Label layoutX="378.0" layoutY="502.0" />
+      <ImageView fitHeight="613.0" fitWidth="915.0" layoutX="-57.0" layoutY="131.0">
+         <image>
+            <Image url="@image/bgLogin.png" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="554.0" layoutY="258.0" prefHeight="180.0" prefWidth="180.0">
+         <children>
+            <ImageView fitHeight="180.0" fitWidth="180.0" layoutX="6.0">
+               <image>
+                  <Image url="@image/manager.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="managerLogin" mnemonicParsing="false" onAction="#handleManagerLoginOnAction" opacity="0.0" prefHeight="180.0" prefWidth="180.0" style="-fx-background-color: transparent; -fx-border-color: #ea4844; -fx-border-radius: 10; -fx-border-width: 2;" text="." textFill="WHITE">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="298.0" layoutY="234.0" prefHeight="180.0" prefWidth="180.0">
+         <children>
+            <ImageView fitHeight="180.0" fitWidth="180.0" layoutX="14.0">
+               <image>
+                  <Image url="@image/customer.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="cusLogin" mnemonicParsing="false" onAction="#handleCusLoginOnAction" opacity="0.0" prefHeight="180.0" prefWidth="180.0" style="-fx-background-color: transparent; -fx-border-color: #ea4844; -fx-border-radius: 10; -fx-border-width: 2;" text=".">
+               <font>
+                  <Font size="30.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="#e53935" />
+                        <Stop color="#ea4844" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="75.0" layoutY="258.0" prefHeight="180.0" prefWidth="180.0">
+         <children>
+            <ImageView fitHeight="180.0" fitWidth="180.0">
+               <image>
+                  <Image url="@image/employee.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="employLogin" mnemonicParsing="false" onAction="#handleEmployLoginOnAction" opacity="0.0" prefHeight="180.0" prefWidth="180.0" style="-fx-background-color: transparent; -fx-border-color: #ea4844; -fx-border-radius: 10; -fx-border-width: 2;" text=".">
+               <font>
+                  <Font size="30.0" />
+               </font>
+               <textFill>
+                  <LinearGradient>
+                     <stops>
+                        <Stop color="#e53935" />
+                        <Stop color="#ea4844" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Button>
+         </children>
+      </AnchorPane>
+      <Label layoutX="265.0" layoutY="466.0" text="choose your role" textFill="#e94b4b">
+         <font>
+            <Font size="35.0" />
+         </font>
+      </Label>
+      <Label layoutX="206.0" layoutY="114.0" prefHeight="75.0" prefWidth="388.0" text="Manage Device" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="52.0" />
+         </font>
+      </Label>
+      <Label layoutX="291.0" layoutY="65.0" prefHeight="75.0" prefWidth="204.0" text="welcome to" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="34.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

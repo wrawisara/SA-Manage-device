@@ -12,4 +12,8 @@ public class Employee extends User{
     public String getEmploy_ID() {
         return employ_ID;
     }
+
+    public void setEmploy_ID(String employ_ID) {
+        this.employ_ID = employ_ID;
+    }
 }

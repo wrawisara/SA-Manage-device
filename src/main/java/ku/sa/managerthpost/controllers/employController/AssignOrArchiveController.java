@@ -23,7 +23,7 @@ public class AssignOrArchiveController {
     @FXML
     private TableView tableView;
     @FXML
-    private Button BackSignupBtn;
+    private Button backLoginBtn;
 
     public void handleBackBtnOnAction (ActionEvent event) throws IOException {
         Button back = (Button) event.getSource();

@@ -8,15 +8,31 @@ public class User {
     private String lastname;
     private String username;
     private String password;
+    private String id;
 
-    public User(String name, String lastname, String username, String password) {
+    public User(String name, String lastname, String username, String password, String id) {
         this.name = name;
         this.lastname = lastname;
         this.username = username;
         this.password = password;
+        this.id = id;
     }
 
+    public String getId() {
+        return id;
+    }
 
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getDepartment () {
+         return "";
+    }
+
+    public String getEquipment (){
+        return "";
+    }
     public String getName() {
         return name;
     }

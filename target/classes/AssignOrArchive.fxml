@@ -33,7 +33,7 @@
       </AnchorPane>
       <AnchorPane prefHeight="83.0" prefWidth="800.0" style="-fx-background-color: #ea4844;">
          <children>
-            <Button fx:id="BackSignupBtn" layoutX="752.0" onAction="#handleBackBtnOnAction" style="-fx-background-color: transparent;" text="&lt;">
+            <Button fx:id="backLoginBtn" layoutX="752.0" onAction="#handleBackBtnOnAction" style="-fx-background-color: transparent;" text="&lt;">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>

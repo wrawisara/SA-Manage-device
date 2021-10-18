@@ -35,37 +35,49 @@ public class CLoginController {
 
     private Customer customer;
 
+    public boolean checkNull (String username, String password) {
+        return username.equals("") || password.equals("");
+    }
+
     public void handleLoginBtnOnAction (ActionEvent event) throws IOException {
-        DatabaseConnection connection = new DatabaseConnection();
-        Connection connectionDB = connection.getConnection();
+        if (checkNull(cusUsername.getText(), cusPassword.getText())) {
+            Alert error = new Alert(Alert.AlertType.ERROR);
+            error.setTitle("Error");
+            error.setContentText("Please fill in the information.");
+            error.setHeaderText(null);
+            error.showAndWait();
+        } else {
+            DatabaseConnection connection = new DatabaseConnection();
+            Connection connectionDB = connection.getConnection();
 
-        String verifyLogin =
-                "SELECT count(1) FROM Customer " +
-                        "WHERE username = '" + cusUsername.getText() +"' AND cpassword = '" + cusPassword.getText() + "'";
-        try {
-            Statement statement = connectionDB.createStatement();
-            ResultSet queryOutput = statement.executeQuery(verifyLogin);
-            while (queryOutput.next()){
-                if (queryOutput.getInt(1) == 1){
-                    Button login = (Button) event.getSource();
-                    Stage stage = (Stage) login.getScene().getWindow();
+            String verifyLogin =
+                    "SELECT count(1) FROM Customer " +
+                            "WHERE username = '" + cusUsername.getText() + "' AND cpassword = '" + cusPassword.getText() + "'";
+            try {
+                Statement statement = connectionDB.createStatement();
+                ResultSet queryOutput = statement.executeQuery(verifyLogin);
+                while (queryOutput.next()) {
+                    if (queryOutput.getInt(1) == 1) {
+                        Button login = (Button) event.getSource();
+                        Stage stage = (Stage) login.getScene().getWindow();
 
-                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/CusCreateOrConfirm.fxml"));
+                        FXMLLoader loader = new FXMLLoader(getClass().getResource("/CusCreateOrConfirm.fxml"));
 
-                    stage.setScene(new Scene(loader.load(), 800, 600));
+                        stage.setScene(new Scene(loader.load(), 800, 600));
 
-                    stage.show();
-                } else {
-                    Alert error = new Alert(Alert.AlertType.ERROR);
-                    error.setTitle("Error!");
-                    error.setContentText("Invalid username or password.");
-                    error.setHeaderText(null);
-                    error.showAndWait();
+                        stage.show();
+                    } else {
+                        Alert error = new Alert(Alert.AlertType.ERROR);
+                        error.setTitle("Error");
+                        error.setContentText("Invalid username or password.");
+                        error.setHeaderText(null);
+                        error.showAndWait();
+                    }
                 }
-            }
             } catch (SQLException e) {
                 e.printStackTrace();
                 e.getCause();
+            }
         }
     }
 
